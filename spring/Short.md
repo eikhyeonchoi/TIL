@@ -14,3 +14,9 @@ gradle에 spring security가 있을 시 기본 cors 설정외에 cors 설정이 
 ```
 dto들은 inner class로 관리하는게 깔끔하다
 ```
+
+```
+Spring Security 기본 설정 제외하기
+MainApplication에서
++ annotation @SpringBootApplication(exclude = {SecurityAutoConfiguration.class, UserDetailsServiceAutoConfiguration.class})
+```
