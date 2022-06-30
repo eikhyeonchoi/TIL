@@ -20,3 +20,8 @@ Spring Security 기본 설정 제외하기
 MainApplication에서
 + annotation @SpringBootApplication(exclude = {SecurityAutoConfiguration.class, UserDetailsServiceAutoConfiguration.class})
 ```
+
+```
+RestController에서 response를 내릴 때
+JSONObject는 serialize가 잘 안됨 HashMap 쓸 것
+```
