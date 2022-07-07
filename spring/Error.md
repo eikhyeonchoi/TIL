@@ -24,3 +24,9 @@ packages에 없는 패키지는 탐색하지 않아서
 @OneToOne or @ManyToOne on ... references an unknown entity ... 에러가 발생한다
 패키지를 추가해야줘야함
 ```
+
+```
+JPA 관련 에러
+ids for this class must be manually assigned before calling save()
+Auto Increment PK일 경우 entity에 GeneratedValue가 설정되어있지 않은 경우 발생
+```
