@@ -1,4 +1,4 @@
-# QueryDsl
+# About Page
 
 ```java
 @Override
@@ -37,27 +37,4 @@ private BooleanExpression ageGoe(Integer ageGoe) {
 *fetchCount, fetchResult는 둘다 querydsl 내부에서 count용 쿼리를 만들어서 실행해야 하는데,  
 이때 작성한 select 쿼리를 기반으로 count 쿼리를 만들어냅니다. 그런데 이 기능이 select 구문을 단순히 count 처리하는 것으로 바꾸는 정도여서,  
 단순한 쿼리에서는 잘 동작하는데, 복잡한 쿼리에서는 잘 동작하지 않습니다. - 김영한*
-```
-
-```java
-/**
-QueryDsl에서 Mysql Function 사용하기
-
-spring.jpa.database-platform=net.addtune.partner.config.MysqlFunctionConfig
-properties에 입력해야줘야 함
-*/
-public class MysqlFunctionConfig extends MySQL57Dialect {
-    public MysqlFunctionConfig() {
-        super();
-        this.registerFunction("GROUP_CONCAT", new StandardSQLFunction("GROUP_CONCAT", new StringType()));
-    }
-}
-
-// ...
-
-/**
-example. 
-ExpressionUtils.template(String.class, "GROUP_CONCAT({0})", syscodeManager.sid)
-*/
-
 ```
