@@ -71,7 +71,7 @@ ex) 프록시설정 80 to 8080(spring ...);
 server {
         listen 80;
         location / {
-                proxy_pass http:#localhost:8080;
+                proxy_pass http://localhost:8080;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
                 proxy_set_header Host $http_host;
