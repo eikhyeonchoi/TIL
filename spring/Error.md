@@ -29,4 +29,16 @@ packages에 없는 패키지는 탐색하지 않아서
 JPA 관련 에러
 ids for this class must be manually assigned before calling save()
 Auto Increment PK일 경우 entity에 GeneratedValue가 설정되어있지 않은 경우 발생
+
+object references an unsaved transient instance
+DB에서 nullable로 설정하고 entity를 nullable로 설정하더라도
+class Exam {
+    @ManyToOne
+    @JoinColumn(..., nullable=true)
+    private Parent parent;
+}
+insert 할때 Exam.builder().parent(Parent.builder().id(null).build()).build()
+이런식으로 parent의 id null로 insert하면 위 에러가 발생함
+parent의 id가 null인 컬럼은 존재하지 않기 때문임 
+단순히 null로 설정하면 null이 되겠거니 생각했지만 아니었음
 ```
