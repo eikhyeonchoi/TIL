@@ -7,6 +7,7 @@ JPA 관련 Hibernate 에러: object references an unsaved transient instance - s
 ```
 JPA 관련 Hibernate 에러: no session
 LAZY 로딩이 불가하다는 뜻 = 트랜잭션이 없다
+★★★ 더 이상 영속성 컨텍스트에서 관리되지 않는다
 ```
 
 ```
